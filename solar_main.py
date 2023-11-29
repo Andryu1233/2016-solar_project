@@ -134,17 +134,21 @@ def main():
     time_speed = tkinter.DoubleVar()
     scale = tkinter.Scale(frame, variable=time_speed, orient=tkinter.HORIZONTAL)
     scale.pack(side=tkinter.LEFT)
+    
 
     load_file_button = tkinter.Button(frame, text="Open file...", command=open_file_dialog)
     load_file_button.pack(side=tkinter.LEFT)
     save_file_button = tkinter.Button(frame, text="Save to file...", command=save_file_dialog)
     save_file_button.pack(side=tkinter.LEFT)
+    stat_record_button = tkinter.Checkbutton(frame, text="Record stats", command=save_file_dialog)
+    stat_record_button.pack(side=tkinter.LEFT)
 
     displayed_time = tkinter.StringVar()
     displayed_time.set(str(physical_time) + " seconds gone")
     time_label = tkinter.Label(frame, textvariable=displayed_time, width=30)
     time_label.pack(side=tkinter.RIGHT)
 
+    
     root.mainloop()
     print('Modelling finished!')
 
